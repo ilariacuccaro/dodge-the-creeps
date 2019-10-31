@@ -25,5 +25,5 @@ func _on_StartButton_pressed():
 func _on_MessageTimer_timeout():
     $MessageLabel.hide()
 
-func _on_start_game():
-	pass # Replace with function body.
+#func _on_start_game():
+ #   queue_free()

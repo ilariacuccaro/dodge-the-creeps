@@ -11,9 +11,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 3, -2, 0, 0, 0, 0, 480.604, 2.09973, 0, 0, 0, 0, 479.496, 719.787, 0, 0, 0, 0, -3.60674, 722.991, 0, 0, 0, 0, -1.39067, 719.667, 0, 0, 0, 0, 3, -2 )
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 486.0
+margin_bottom = 734.0
+color = Color( 0.105423, 0.574219, 0.519282, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 62.4537, 46.0903 )
@@ -41,8 +46,6 @@ curve = SubResource( 1 )
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( 3, -2 )
 rotation = 0.00858376
-[connection signal="hit" from="Player" to="." method="_ready"]
-[connection signal="hit" from="Player" to="." method="new_game"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
