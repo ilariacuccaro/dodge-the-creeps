@@ -14,7 +14,6 @@ func show_game_over():
     $MessageLabel.show()
     yield(get_tree().create_timer(1), 'timeout')
     $StartButton.show()
-    $HUD.show_game_over()
 
 func update_score(score):
     $ScoreLabel.text = str(score)
@@ -25,3 +24,6 @@ func _on_StartButton_pressed():
 
 func _on_MessageTimer_timeout():
     $MessageLabel.hide()
+
+func _on_start_game():
+	pass # Replace with function body.

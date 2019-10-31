@@ -42,8 +42,8 @@ curve = SubResource( 1 )
 position = Vector2( 3, -2 )
 rotation = 0.00858376
 [connection signal="hit" from="Player" to="." method="_ready"]
-[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="hit" from="Player" to="." method="new_game"]
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

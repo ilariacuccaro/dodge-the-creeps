@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -12,34 +19,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 45.9549
-margin_top = -322.096
-margin_right = 85.9549
-margin_bottom = -308.097
-rect_scale = Vector2( 3.84, 4.2 )
+margin_left = -56.5723
+margin_top = -356.955
+margin_right = -11.5723
+margin_bottom = -197.955
+rect_scale = Vector2( 2.48934, 2.36806 )
 custom_fonts/font = SubResource( 1 )
 text = "0
 "
 align = 1
 
 [node name="MessageLabel" type="Label" parent="."]
-margin_left = 89.6248
-margin_top = 187.844
-margin_right = 204.625
-margin_bottom = 201.844
+margin_left = -60.0647
+margin_top = 228.855
+margin_right = 123.935
+margin_bottom = 305.855
 rect_scale = Vector2( 3.05391, 2.98896 )
-text = " Dodge the Creep!"
+custom_fonts/font = SubResource( 2 )
+text = " Dodge the 
+Creep!"
 align = 1
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 219.765
-margin_top = 372.876
-margin_right = 260.765
-margin_bottom = 392.876
+margin_left = 193.108
+margin_top = 491.807
+margin_right = 234.108
+margin_bottom = 511.807
 rect_scale = Vector2( 2.13626, 1.95061 )
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+[connection signal="start_game" from="." to="." method="_on_start_game"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
